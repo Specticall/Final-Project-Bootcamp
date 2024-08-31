@@ -5,6 +5,7 @@ import Explore from "./pages/Explore";
 import Detail from "./pages/Detail";
 import { SkeletonTheme } from "react-loading-skeleton";
 import About from "./components/home/About";
+import { CountryProvider } from "./context/CountryContext";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,9 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <SkeletonTheme baseColor="#202227" highlightColor="#31343E">
-      <RouterProvider router={router} />
+      <CountryProvider>
+        <RouterProvider router={router} />
+      </CountryProvider>
     </SkeletonTheme>
   );
 }
